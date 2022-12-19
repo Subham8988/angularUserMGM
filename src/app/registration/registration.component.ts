@@ -41,7 +41,7 @@ imageFormData:any
 onLoad()
 {
  this.imageFormData = new FormData();
-  this.imageFormData.append('file', this.imageUrl, this.imageUrl.name);
+  // this.imageFormData.append('file', this.imageUrl, this.imageUrl.name);
   this.imageFormData.append('password', this.registere.value['password']);
   this.imageFormData.append('tc', this.registere.value['tc']);
   this.imageFormData.append('email',this.registere.value['email']);

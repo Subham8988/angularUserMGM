@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment.prod';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -14,7 +15,7 @@ export class UsermgmService {
    }
    public async userRegister(data:any)
    {
-    return this.http.post('http://localhost:6600/route/controller/user/createUser',data)
+    return this.http.post(environment.baseurl+'route/controller/user/createUser',data)
    }
    public async forgetpassword_link(email:any)
    {
