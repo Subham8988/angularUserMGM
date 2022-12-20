@@ -11,7 +11,8 @@ export class UsermgmService {
 
    public async userlogin(data:any)
    {
-     return this.http.post('http://localhost:6600/route/controller/user/login',data);
+    return  this.http.post(environment.baseurl+'route/controller/user/login',data);
+
    }
    public async userRegister(data:any)
    {
@@ -19,7 +20,7 @@ export class UsermgmService {
    }
    public async forgetpassword_link(email:any)
    {
-    return this.http.post('http://localhost:6600/route/controller/user/passwordResetLink',email)
+    return this.http.post(environment.baseurl+'route/controller/user/passwordResetLink',email)
    }
    public async userDetails()
    {
@@ -28,7 +29,7 @@ export class UsermgmService {
   .set('content-type', 'application/json')
   .set('Authorization', token);
 
-    return this.http.get('http://localhost:6600/route/middleware/controller/user/auth/user',{'headers':headers})
+    return this.http.get(environment.baseurl+'route/middleware/controller/user/auth/user',{'headers':headers})
    }
 
    public async userProfileUpdate(data:any)
@@ -37,6 +38,6 @@ export class UsermgmService {
     const headers= new HttpHeaders()
   .set('content-type', 'application/json')
   .set('Authorization', token);
-    return this.http.post<any>('http://localhost:6600/route/middleware/controller/user/auth/chngpassword',data,{'headers':headers})
+    return this.http.post<any>(environment.baseurl+'route/middleware/controller/user/auth/chngpassword',data,{'headers':headers})
    }
 }
