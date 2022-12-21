@@ -3,7 +3,7 @@ import { UsermgmService } from './../usermgm.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-
+declare var $: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   userLogin:any;
-
+  password:any;
+  show = false;
   constructor(private service:UsermgmService,private route: Router) { }
 
   ngOnInit(): void {
@@ -19,6 +20,8 @@ export class LoginComponent implements OnInit {
        email: new FormControl(),
        password:new FormControl()
     })
+
+    this.password = 'password';
   }
   userdata:any
 
@@ -47,5 +50,16 @@ export class LoginComponent implements OnInit {
     }).catch((err:any) => {
 alert("errere")
     });
+  }
+
+  
+  onClick() {
+    if (this.password === 'password') {
+      this.password = 'text';
+      this.show = true;
+    } else {
+      this.password = 'password';
+      this.show = false;
+    }
   }
 }

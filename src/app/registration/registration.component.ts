@@ -4,7 +4,6 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import Swal from "sweetalert2";
 
-
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',

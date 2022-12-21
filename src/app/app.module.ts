@@ -11,7 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
+import { UploadBlogComponent } from './upload-blog/upload-blog.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     RegistrationComponent,
     HomeComponent,
     ForgotPasswordComponent,
-    ProfileComponent
+    ProfileComponent,
+    UploadBlogComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
