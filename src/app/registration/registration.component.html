@@ -23,23 +23,39 @@
 
                 <div class="mt-2">
                   <label class="form-label" for="form3Example4cg">Password</label>
-                  <input type="password" id="form3Example4cg" formControlName="password" class="form-control" />
+                  <input [type]="password"  id="form3Example4cg" formControlName="password" class="form-control" />
+                  <span (click)="onClick()" style="     float: right;
+                  margin-top: -22px;
+                  position: relative;
+                  margin-right: 7px;
+                  z-index: 1;">
+                    <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+                    <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+                  </span>
                 </div>
 
                 <div class="mt-2">
                   <label class="form-label" for="form3Example4cdg">Repeat your password</label>
                   <input type="password" id="form3Example4cdg" formControlName="conformpassword" class="form-control" />
+                  <!-- <span (click)="onClick()" style="float: right;
+                  margin-top: -22px;
+                  position: relative;
+                  margin-right: 7px;
+                  z-index: 1;">
+                    <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+                    <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+                  </span> -->
                 </div>
 
                 <div class="mt-4">
-                  <input class="form-check-input me-2" type="checkbox" value="true" formControlName="tc " id="form2Example3cg" />
+                  <input class="form-check-input mt-3" type="checkbox" value="true" formControlName="tc " id="form2Example3cg" />
                   <label class="form-check-label" for="form2Example3g">
                     I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
                   </label>
                 </div>
                 <div class="d-flex justify-content-center mt-2">
                   <button type="submit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-2 text-body" (click)="onLoad()">Register</button>
+                    class="btn btn-success btn-block btn-lg gradient-custom-2 text-body" style="font-size: 1.5rem ;color:black " (click)="onLoad()">Register</button>
                 </div>
   
                 <p class="text-center text-muted  mt-3">Have already an account? <a href="/"

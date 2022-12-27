@@ -3,7 +3,6 @@ import { UsermgmService } from './../usermgm.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-declare var $: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

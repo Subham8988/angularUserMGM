@@ -24,6 +24,7 @@
     "@ionic/angular": "^6.4.1",
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.3",
+    "ngx-ui-loader": "^13.0.0",
     "rxjs": "~7.5.0",
     "save": "^2.9.0",
     "sweetalert2": "^11.6.15",
