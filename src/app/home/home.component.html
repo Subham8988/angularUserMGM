@@ -39,29 +39,28 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Toggle button -->
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="sidebarMenu"
         aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
 
       <!-- Brand -->
-      <a class="navbar-brand" style="font-size: 2rem;">
-        UserManagement
+      <a class="navbar-brand">
+        User-Dashboard
         <!-- <imgs -->
       </a>
       <!-- Search form -->
       <form class="d-none d-md-flex input-group w-auto my-auto">
-        <input autocomplete="off" type="search" class="form-control" placeholder='Search'
-          style="min-width: 225px; height: 28px;font-size: medium;" />
-        <span class="input-group-text border-0" style="cursor: pointer;background: #c7c2c2;
-        height: 28px;"><i class="fas fa-search"></i></span>
+        <input autocomplete="off" type="search" class="form-control rounded" placeholder='Search'
+          style="min-width: 225px" />
+        <span class="input-group-text border-0" style="cursor: pointer;"><i class="fas fa-search"></i></span>
       </form>
 
       <!-- Right links -->
       <ul class="navbar-nav ms-auto d-flex flex-row">
-        <li>
-          <button routerLink="/upload-blog">Upload</button>
-        </li>
+        <!-- <li>
+          <button >Upload</button>
+        </li> -->
         <!-- Notification dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" id="navbarDropdownMenuLink" role="button"
@@ -166,7 +165,7 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" routerLink="/profile">My profile</a></li>
-            <!-- <li><a class="dropdown-item" >Settings</a></li> -->
+            <li><a class="dropdown-item" routerLink="/upload-blog" >Blog-Upload</a></li>
             <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
           </ul>
         </li>
@@ -278,7 +277,7 @@
         </div>
       </div>
     </section>
- 
+
     <section>
       <div class="row">
         <div class="col-xl-3 col-sm-6 col-12 mb-4">
@@ -609,32 +608,32 @@
 
 
 <section class="mt-5">
-  <header class="main_header">
-    <div class="d-flex justify-content-center align-items-center flex-column py-5">
-      <h1 class="text-uppercase main_heading">Thapa Technical</h1>
-      <p class="main_heading__para">Welcome to my <span class="text-capitalize bg-dark text-white py-2 px-3">
-          world of blog</span> </p>
-    </div>
-    <!-- //the main image -->
-    <div class="main_header__div d-flex align-items-start
+<header class="main_header">
+  <div class="d-flex justify-content-center align-items-center flex-column py-5">
+    <h1 class="text-uppercase main_heading">subham Technical</h1>
+    <p class="main_heading__para">Welcome to my <span class="text-capitalize bg-dark text-white py-2 px-3">
+        world of blog</span> </p>
+  </div>
+  <!-- //the main image -->
+  <div class="main_header__div d-flex align-items-start
   justify-content-center  flex-column shadow pl-5">
-      <p>Thapa Technical</p>
-      <!-- <h2 class="text-uppercase">the Progammer guy</h2> -->
-      <h2 class="animateWord">
-        <span>He is</span>
-        <div>
-          <!--        Use classes 2,3, or 4 to match the number of words -->
-          <ul class="flip4">
-            <li> a Progammer </li>
-            <li> a Youtuber</li>
-            <li> a Freelancer</li>
-            <li> Awesome </li>
-          </ul>
-        </div>
-      </h2>
-      <button class="text-uppercase">subscribe</button>
-    </div>
-  </header>
+    <p>subham Technical</p>
+    <!-- <h2 class="text-uppercase">the Progammer guy</h2> -->
+    <h2 class="animateWord">
+      <span>He is</span>
+      <div>
+        <!--        Use classes 2,3, or 4 to match the number of words -->
+        <ul class="flip4">
+          <li> a Progammer </li>
+          <li> a Youtuber</li>
+          <li> a Freelancer</li>
+          <li> Awesome </li>
+        </ul>
+      </div>
+    </h2>
+    <button class="text-uppercase">subscribe</button>
+  </div>
+</header>
 </section>
 
 <div class="container-fluid ">
@@ -656,7 +655,7 @@
                   src="https://images.pexels.com/photos/3815750/pexels-photo-3815750.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                   class="img-fluid shadow">
               </figure>
-              <p><span class="font-weight-bold">Thapa Technical</span> Welcomes, all of you to my
+              <p><span class="font-weight-bold">subham Technical</span> Welcomes, all of you to my
                 world of blog. Some text about this blog entry. Fashion fashion and mauris neque
                 quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem
                 euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at.
@@ -683,7 +682,7 @@
                     <img src="https://img.icons8.com/doodle/48/000000/user-male-skin-type-5.png" />
                   </div>
                   <div class="reply_text__left">
-                    <p class="blog_title "> <span class="font-weight-bold"> Thapa, </span> Aug
+                    <p class="blog_title "> <span class="font-weight-bold"> subham, </span> Aug
                       12, 2020, 7:20 PM </p>
                     <p>Awesome, Bro I love your content.</p>
                   </div>
@@ -702,7 +701,7 @@
                   src="https://images.pexels.com/photos/4050291/pexels-photo-4050291.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
                   class="img-fluid shadow">
               </figure>
-              <p><span class="font-weight-bold">Thapa Technical</span> Welcomes, all of you to my
+              <p><span class="font-weight-bold">subham Technical</span> Welcomes, all of you to my
                 world of blog. Some text about this blog entry. Fashion fashion and mauris neque
                 quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem
                 euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at.
@@ -739,7 +738,7 @@
                     <img src="https://img.icons8.com/doodle/48/000000/user-male-skin-type-5.png" />
                   </div>
                   <div class="reply_text__left">
-                    <p class="blog_title "> <span class="font-weight-bold"> Thapa, </span> Aug
+                    <p class="blog_title "> <span class="font-weight-bold"> subham, </span> Aug
                       12, 2020, 7:20 PM </p>
                     <p>Awesome, Bro I love your content.</p>
                   </div>
@@ -758,7 +757,7 @@
                   src="https://images.pexels.com/photos/4050303/pexels-photo-4050303.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                   class="img-fluid shadow">
               </figure>
-              <p><span class="font-weight-bold">Thapa Technical</span> Welcomes, all of you to my
+              <p><span class="font-weight-bold">subham Technical</span> Welcomes, all of you to my
                 world of blog. Some text about this blog entry. Fashion fashion and mauris neque
                 quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem
                 euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at.
@@ -785,7 +784,7 @@
                     <img src="https://img.icons8.com/doodle/48/000000/user-male-skin-type-5.png" />
                   </div>
                   <div class="reply_text__left">
-                    <p class="blog_title "> <span class="font-weight-bold"> Thapa, </span> Aug
+                    <p class="blog_title "> <span class="font-weight-bold"> subham, </span> Aug
                       12, 2020, 7:20 PM </p>
                     <p>Awesome, Bro I love your content.</p>
                   </div>
@@ -795,7 +794,7 @@
                     <img src="https://img.icons8.com/doodle/48/000000/user-male-skin-type-5.png" />
                   </div>
                   <div class="reply_text__left">
-                    <p class="blog_title "> <span class="font-weight-bold"> Thapatechnical,
+                    <p class="blog_title "> <span class="font-weight-bold"> subhamtechnical,
                       </span> Aug 12, 2020, 7:20 PM </p>
                     <p>Awesome, Bro I love your content.</p>
                   </div>
@@ -815,7 +814,7 @@
                     <img src="https://img.icons8.com/doodle/48/000000/user-male-skin-type-5.png" />
                   </div>
                   <div class="reply_text__left">
-                    <p class="blog_title "> <span class="font-weight-bold"> Thapa, </span> Aug
+                    <p class="blog_title "> <span class="font-weight-bold"> subham, </span> Aug
                       12, 2020, 7:20 PM </p>
                     <p>Awesome, Bro I love your content.</p>
                   </div>
@@ -834,7 +833,7 @@
           <div class="row gy-5 left_div__blog">
             <!-- about me -->
             <div class="col-12  about_me_div shadow">
-              <p>Vinod Thapa</p>
+              <p>Vinod subham</p>
               <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love
                 and a interest of lorem ipsum and mauris neque quam blog. I want to share my world
                 with you.</p>
@@ -846,7 +845,7 @@
               </div>
               <div class="right_sub__div shadow">
                 <div class="row ">
-                  <div class="col-3 " style="background-image: url('assets/bg.png'); background-size: var(--bg-size);">
+                  <div class="col-3  popular_post__img1 py-2 pl-2">
                   </div>
                   <div class="col-9">
                     <h3>Bill Gates</h3>
@@ -854,7 +853,7 @@
                   </div>
                 </div>
                 <div class="row ">
-                  <div class="col-3 " style="background-image: url('../assets/mz.jpg'); background-size: var(--bg-size);">
+                  <div class="col-3  popular_post__img2 py-2 pl-2">
                   </div>
                   <div class="col-9">
                     <h3>Mark Zuckerberg </h3>
@@ -862,7 +861,7 @@
                   </div>
                 </div>
                 <div class="row ">
-                  <div class="col-3 " style="background-image: url('../assets/zb.jpg'); background-size: var(--bg-size);">
+                  <div class="col-3  popular_post__img3 py-2 pl-2">
                   </div>
                   <div class="col-9">
                     <h3>Jeff Bezos</h3>
@@ -870,7 +869,7 @@
                   </div>
                 </div>
                 <div class="row ">
-                  <div class="col-3" style="background-image: url('../assets/sj.jpg'); background-size: var(--bg-size);">
+                  <div class="col-3  popular_post__img4 py-2 pl-2">
                   </div>
                   <div class="col-9">
                     <h3>Steve Jobs</h3>
@@ -896,16 +895,16 @@
                 <h2>Tags</h2>
               </div>
               <div class="tags_main right_sub__div">
-                <a href="https://youtu.be/5p8e2ZkbOFU" target="_thapa" class="badge shadow text-capitalize"> html </a>
-                <a href="#" class="badge shadow text-capitalize"> css </a>
-                <a href="#" class="badge shadow text-capitalize"> js </a>
-                <a href="#" class="badge shadow text-capitalize"> react </a>
-                <a href="#" class="badge shadow text-capitalize"> vue </a>
-                <a href="#" class="badge shadow text-capitalize"> php </a>
-                <a href="#" class="badge shadow text-capitalize"> python </a>
-                <a href="#" class="badge shadow text-capitalize"> kotlin </a>
-                <a href="#" class="badge shadow text-capitalize"> c++ </a>
-                <a href="#" class="badge shadow text-capitalize"> java </a>
+                <a href="https://youtu.be/5p8e2ZkbOFU" target="_subham" class="badge shadow text-capitalize"> html </a>
+                <a href="" class="badge shadow text-capitalize"> css </a>
+                <a href="" class="badge shadow text-capitalize"> js </a>
+                <a href="" class="badge shadow text-capitalize"> react </a>
+                <a href="" class="badge shadow text-capitalize"> vue </a>
+                <a href="" class="badge shadow text-capitalize"> php </a>
+                <a href="" class="badge shadow text-capitalize"> python </a>
+                <a href="" class="badge shadow text-capitalize"> kotlin </a>
+                <a href="" class="badge shadow text-capitalize"> c++ </a>
+                <a href="" class="badge shadow text-capitalize"> java </a>
               </div>
             </div>
             <!-- Inspiration -->
@@ -929,7 +928,7 @@
                         class="img-fluid shadow">
                     </figure>
                   </div>
-                  <div class="col-6">
+                  <div class="col-6 ">
                     <figure>
                       <img
                         src="https://images.pexels.com/photos/38547/office-freelancer-computer-business-38547.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
@@ -952,13 +951,13 @@
                 <h2>Follow Me</h2>
               </div>
               <div class="right_sub__div d-flex justify-content-around">
-                <a href="#"> <i class="fab fa-facebook-square fa-3x"></i></a>
-                <a href="https://www.instagram.com/vinodthapa55/" target="_thapa"> <i
+                <a href=""> <i class="fab fa-facebook-square fa-3x"></i></a>
+                <a href="https://www.instagram.com/vinodsubham55/" target="_subham"> <i
                     class="fab fa-3x fa-instagram"></i></a>
-                <a href="#"> <i class="fab fa-3x fa-github-square"></i> </a>
-                <a href="#"> <i class="fab fa-3x fa-twitter-square"></i></a>
-                <a href="#"> <i class="fab fa-3x fa-youtube-square"></i> </a>
-                <a href="#"> <i class="fab fa-3x fa-linkedin"></i></a>
+                <a href=""> <i class="fab fa-3x fa-github-square"></i> </a>
+                <a href=""> <i class="fab fa-3x fa-twitter-square"></i></a>
+                <a href=""> <i class="fab fa-3x fa-youtube-square"></i> </a>
+                <a href=""> <i class="fab fa-3x fa-linkedin"></i></a>
               </div>
             </div>
             <!-- Subscribe -->
