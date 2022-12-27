@@ -1,17 +1,38 @@
-<p>upload-blog works!</p>
-<div class="container p-5">
-  <form class="row g-3" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="col-md-12">
-      <label for="inputEmail4" class="form-label">Image Upload</label>
-      <input (change)="onImageChangeFromFile($event)" type="file" formControlName="imageInput" class="form-control" >
-      <div class="invalid-feedback">
-        <div >JPG Image is required</div>
-        
-     </div>
+<div class="container mt-4">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+      <div class="card" style="border-radius: 15px;">
+        <div class="card-body p-4">
+          <form [formGroup]="myForm" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label for="name">Title</label>
+              <input formControlName="blog_tittle" id="name" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="name">Category</label>
+              <select class="form-control" formControlName="blog_category">
+                <option>Learning</option>
+                <option>Coding</option>
+                <option>Entertainment</option>
+                <option>Social Media</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="file">Image</label>
+              <input formControlName="file" id="file" type="file" class="form-control" (change)="onFileChange($event)">
+            </div>
+            <div style="height: 200px; width: 100%; border: 1px solid black;">
+              <img [src]="imageSrc" *ngIf="imageSrc" style="height: 200px; width: 100%">
+            </div>
+            <div class="form-group">
+              <label for="name">Content</label>
+              <textarea id="content" name="content" rows="5" cols="50" class="form-control"
+                formControlName="blog_content"></textarea>
+            </div>
+          </form>
+          <button class="btn btn-primary" (click)="submit()" >Submit</button>
+        </div>
+      </div>
     </div>
-    
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </div>
-  </form>
+  </div>
 </div>

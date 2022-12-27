@@ -1,23 +1,23 @@
 <section style="background-color: #eee;">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col">
-          <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-            <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
-              <li class="breadcrumb-item"><a >User</a></li>
-              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-<form  [formGroup]="userupdate">
+  <div class="container py-5">
     <div class="row">
+      <div class="col-12">
+        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/home">Home</a></li>
+            <li class="breadcrumb-item"><a>User</a></li>
+            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <form [formGroup]="userupdate">
+      <div class="row">
         <div class="col-lg-4">
           <div class="card mb-4">
             <div class="card-body text-center">
-              <img src={{userdata.img}} alt="avatar"
-                class="rounded-circle img-fluid" style="width: 150px;">
+              <img src={{userdata.img}} alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
               <h5 class="my-3">{{userdata.name}}</h5>
               <p class="text-muted mb-1">{{userdata.designation}}</p>
               <p class="text-muted mb-4">{{userdata.address}}</p>
@@ -32,23 +32,23 @@
               <ul class="list-group list-group-flush rounded-3">
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fas fa-globe fa-lg text-warning"></i>
-                  <input class="text-muted mb-0"type="text" formControlName="web">
+                  <input class="text-muted mb-0" type="text" formControlName="web">
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                  <input class="text-muted mb-0"type="text" formControlName="git">
+                  <input class="text-muted mb-0" type="text" formControlName="git">
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                  <input class="text-muted mb-0"type="text" formControlName="twitter">
+                  <input class="text-muted mb-0" type="text" formControlName="twitter">
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                  <input class="text-muted mb-0"type="text" formControlName="insta">
+                  <input class="text-muted mb-0" type="text" formControlName="insta">
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                  <input class="text-muted mb-0"type="text" formControlName="facebook">
+                  <input class="text-muted mb-0" type="text" formControlName="facebook">
                 </li>
               </ul>
             </div>
@@ -62,7 +62,7 @@
                   <p class="mb-0">Full Name</p>
                 </div>
                 <div class="col-sm-9">
-                    <p class="text-muted mb-0">{{userdata.name}}</p>
+                  <p class="text-muted mb-0">{{userdata.name}}</p>
                   <!-- <p >Johnatan Smith</p> -->
                 </div>
               </div>
@@ -72,16 +72,17 @@
                   <p class="mb-0">Email</p>
                 </div>
                 <div class="col-sm-9">
-                    <p class="text-muted mb-0">{{userdata.email}}</p>
+                  <p class="text-muted mb-0">{{userdata.email}}</p>
                 </div>
               </div>
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0" >Designation</p>
+                  <p class="mb-0">Designation</p>
                 </div>
                 <div class="col-sm-9">
-                    <input  formControlName="designation" class="text-muted mb-0"type="text" value={{userdata.designation}}>
+                  <input formControlName="designation" class="text-muted mb-0" type="text"
+                    value={{userdata.designation}}>
                 </div>
               </div>
               <hr>
@@ -90,7 +91,7 @@
                   <p class="mb-0">Phone</p>
                 </div>
                 <div class="col-sm-9">
-                    <input  formControlName="phone" class="text-muted mb-0"type="text" value="{{userdata.phone}}">
+                  <input formControlName="phone" class="text-muted mb-0" type="text" value="{{userdata.phone}}">
                 </div>
               </div>
               <hr>
@@ -99,7 +100,7 @@
                   <p class="mb-0">Mobile</p>
                 </div>
                 <div class="col-sm-9">
-                    <input class="text-muted mb-0"type="text" formControlName="mobile">
+                  <input class="text-muted mb-0" type="text" formControlName="mobile">
                 </div>
               </div>
               <hr>
@@ -108,7 +109,7 @@
                   <p class="mb-0">Address</p>
                 </div>
                 <div class="col-sm-9">
-                    <input class="text-muted mb-0"type="text" formControlName="address">
+                  <input class="text-muted mb-0" type="text" formControlName="address">
                 </div>
               </div>
               <hr>
@@ -117,82 +118,143 @@
                   <p class="mb-0">Update Profile</p>
                 </div>
                 <div class="col-sm-9">
-                    <button type="button" (click)="userUpdate()" class="btn btn-outline-primary ms-1">Save</button>
+                  <button type="button" (click)="userUpdate()" class="btn btn-outline-primary ms-1">Save</button>
                 </div>
               </div>
             </div>
           </div>
-          <!-- <div class="row">   -
-            <div class="col-md-6">
-              <div class="card mb-4 mb-md-0">
-                <div class="card-body">
-                  <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
-                  </p>
-                  <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-                  <div class="progress rounded" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                  <div class="progress rounded" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                  <div class="progress rounded" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                  <div class="progress rounded" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                  <div class="progress rounded mb-2" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card mb-4 mb-md-0">
-                <div class="card-body">
-                  <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
-                  </p>
-                  <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-                  <div class="progress rounded" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                  <div class="progress rounded" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                  <div class="progress rounded" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                  <div class="progress rounded" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                  <div class="progress rounded mb-2" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
+        </div>
+        
+      </div>
+      
+    </form>
+   
+  </div>
+ 
+</section>
+<div class="container">
+  <div class="row justify-content-between">
+    <!-- left side of the blog  -->
+    <div class=" mx-4 my-4 col-md-3 card shadow " *ngFor="let user of dataa" >
+      <div class="d-flex justify-content-center align-items-center flex-column px-4 pt-3 ">
+        <h1 class="text-uppercase">{{user.blog_tittle}}</h1>
+        <p class="blog_title"> <span class="font-weight-bold">{{user.blog_category}}</span>
+          {{user.created_on_date}} </p>
+      </div>
+      <figure class="right_side_img mb-5">
+        <img style="width: 100%;" src="{{user.blog_img}}">
+      </figure>
+      <p>{{user.blog_content}}</p>
+      <div class="d-flex justify-content-between left_div_btns">
+        <div>
+          <button class="left_div__like" id="like_btn"><i class="fa fa-thumbs-up"></i>Like</button>
+        </div>
+        <div>
         </div>
       </div>
-</form>
-
+      <div class="d-flex justify-content-between left_div_btns" tabindex="-1">
+        <div class="three-dots"></div>
+        <div class="dropdown">
+          <ul>
+            <li (click)="blogView(user._id)" data-bs-toggle="modal" data-bs-target="#view">
+              <i class="bi bi-eye-fill"><Span>View</Span></i>
+            </li>
+            <li (click)="blogView(user._id)" data-bs-toggle="modal" data-bs-target="#edit">
+              <i class="bi bi-pencil-fill"><Span>Edit</Span></i>
+            </li>
+            <li (click)="blogDelete(user._id)"><i class="bi bi-trash3-fill"><Span>Delete</Span></i>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </section>
+
+<!-- Modal Edit-->
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Blog</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="myForm">
+          <div class="form-group">
+            <label for="name">Title</label>
+            <input formControlName="blog_tittle" id="name" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="name">Category</label>
+            <select class="form-control" formControlName="blog_category">
+              <option>Learning</option>
+              <option>Coding</option>
+              <option>Entertainment</option>
+              <option>Social Media</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="file">Image</label>
+            <input formControlName="file" id="file" type="file" class="form-control">
+          </div>
+          <div style="height: 200px; width: 100%; border: 1px solid black;">
+            <!-- <img [src]="imageSrc" *ngIf="imageSrc" style="height: 200px; width: 100%"> -->
+          </div>
+          <div class="form-group">
+            <label for="name">Content</label>
+            <textarea id="content" name="content" rows="5" cols="50" class="form-control"
+              formControlName="blog_content"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer" >
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="blogEdit(userBlogDataObj._id)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for View -->
+<div class="modal fade" id="view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">View Blog</h5>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+          <div class="form-group">
+            <label for="name">Title</label>
+            <input formControlName="blog_tittle" id="name" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="name">Category</label>
+            <select class="form-control" formControlName="blog_category">
+              <option>Learning</option>
+              <option>Coding</option>
+              <option>Entertainment</option>
+              <option>Social Media</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="file">Image</label>
+            <input formControlName="file" id="file" type="file" class="form-control" (change)="onFileChange($event)">
+          </div>
+          <div style="height: 200px; width: 100%; border: 1px solid black;">
+            <img [src]="imageSrc" *ngIf="imageSrc" style="height: 200px; width: 100%">
+          </div>
+          <div class="form-group">
+            <label for="name">Content</label>
+            <textarea id="content" name="content" rows="5" cols="50" class="form-control"
+              formControlName="blog_content"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
