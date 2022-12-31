@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from "sweetalert2";
-import { HttpClient } from '@angular/common/http';
 import { UsermgmService } from './../usermgm.service'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-upload-blog',
   templateUrl: './upload-blog.component.html',
@@ -16,14 +17,14 @@ export class UploadBlogComponent {
     file: new FormControl('', [Validators.required]),
     blog_content: new FormControl('',[Validators.required])
   });
-  constructor(private http: HttpClient,private service: UsermgmService) { }
- 
+  constructor(private service: UsermgmService,private route: Router) { }
+
   ngOnInit(): void {
   }
   get f(){
   return this.myForm.controls;
   }
-   
+
   onFileChange(event:any) {
     const reader = new FileReader();
     if(event.target.files && event.target.files.length) {
@@ -37,17 +38,40 @@ export class UploadBlogComponent {
       };
     }
   }
-   
+
+
+  updatedBlogDataRes:any
   async submit(){
     let bodydata = this.myForm.value
-    let res = await this.service.uploadBlog(bodydata);
-    console.log('res');
-    
-    // let res =(await this.service.uploadBlog(bodydata)).subscribe((data: any) => {
-    //   alert('Uploaded Successfully.');
-    //   console.log("sdjdhasgdj", res);
-    // })
-    //     console.log("hello",bodydata);
+    console.log(this.myForm.value['blog_category']);
+if(this.myForm.value['blog_category']==''||this.myForm.value['blog_tittle']==''||this.myForm.value['blog_content']=='')
+{
+
+  Swal.fire({
+    icon:'warning',
+    text:'Please Fill All Fields'
+  })
+}
+else{
+   var res = (await this.service.uploadBlog(bodydata)).subscribe((data)=>{
+     this.updatedBlogDataRes =data;
+     if(this.updatedBlogDataRes.status==200){
+      Swal.fire({
+        icon:'success',
+        text:'You have succesfully upload your blog'
+      }).then((result:any)=>{
+this.route.navigate(['home'])
+      })
+     }
+     else{
+      Swal.fire({
+        icon:'error',
+        text:'Somethings Wents Wrong'
+      })
+     }
+    })
+}
+
   }
 }
 

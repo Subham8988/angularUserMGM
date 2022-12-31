@@ -26,13 +26,28 @@ export class LoginComponent implements OnInit {
 
   logIn() {
     const userLogInData = this.userLogin.value;
-    this.service.userlogin(userLogInData).then((result) => {
+    console.log('hii ',this.userLogin.value['email']);
+
+    if(this.userLogin.value['email']==null)
+    {
+      Swal.fire({
+        icon:'warning',
+        text:'Please Enter Email'
+      })
+    }
+    else{
+      if(this.userLogin.value['password']==null){
+        Swal.fire({
+          icon:'warning',
+          text:'Please Enter Password'
+        })
+      }
+      else{
+        this.service.userlogin(userLogInData).then((result) => {
       (result.subscribe((data) => {
         this.userdata = data;
         if (this.userdata.status == 200) {
           localStorage.setItem('token', this.userdata.token)
-          console.log("userlogin", this.userdata);
-
           this.route.navigate(['home'])
         }
         if (this.userdata.status == 204) {
@@ -46,6 +61,8 @@ export class LoginComponent implements OnInit {
     }).catch((err: any) => {
       alert("errere")
     });
+      }
+    }
   }
 
 

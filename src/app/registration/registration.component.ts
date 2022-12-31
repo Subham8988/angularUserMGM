@@ -29,34 +29,48 @@ export class RegistrationComponent implements OnInit {
 
   resData: any
   registerUser() {
+    console.log('form controll',this.registere);
+
     this.onLoad();
   }
 
   uploadFile(event: any) {
     this.imageUrl = event.target.files[0];
-    this.onLoad();
+    // this.onLoad();
   }
 
   imageFormData: any
   onLoad() {
+    console.log('form controll',this.registere);
     this.imageFormData = new FormData();
     // this.imageFormData.append('file', this.imageUrl, this.imageUrl.name);
     this.imageFormData.append('password', this.registere.value['password']);
-    this.imageFormData.append('tc', this.registere.value['tc']);
-    this.imageFormData.append('email', this.registere.value['email']);
-    this.service.userRegister(this.imageFormData).then((data) => {
-      data.subscribe((res) => {
-        this.resData = res
-        if (this.resData.status == 200) {
-          Swal.fire({
-            icon: 'success',
-            title: 'Register Sucessfully'
-          }).then((result: any) => {
-            this.route.navigate([''])
-          })
-        }
+    this.imageFormData.append('name', this.registere.value['name']);
+    if(this.registere.value['tc']==null)
+    {
+      Swal.fire({
+        icon:'warning',
+        text:'Please Check Term&Condition to register'
       })
-    })
+    }
+    else{
+      this.imageFormData.append('tc', this.registere.value['tc']);
+      this.imageFormData.append('email', this.registere.value['email']);
+      this.service.userRegister(this.imageFormData).then((data) => {
+        data.subscribe((res) => {
+          this.resData = res
+          if (this.resData.status == 200) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Register Sucessfully'
+            }).then((result: any) => {
+              this.route.navigate([''])
+            })
+          }
+        })
+      })
+    }
+
   }
   onClick() {
     if (this.password === 'password') {

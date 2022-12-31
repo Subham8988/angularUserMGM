@@ -19,12 +19,11 @@ export class HomeComponent implements OnInit {
   clear: any;
   dataa:any;
   delete:any;
+  searchBlog:any
   async logout() {
     // localStorage.clear();
     const data = await (await this.user.userlogOut()).subscribe((data) => {
-      alert("sonu")
       this.clear = data;
-      console.log("sadada", this.clear);
       if (this.clear.status == 'sucess') {
         localStorage.clear();
         Swal.fire({
@@ -47,7 +46,7 @@ export class HomeComponent implements OnInit {
   this.user.viewAllBlog().then((result)=>{
     result.subscribe((res:any)=>{
       this.dataa=res.data
-      // console.log("sonu",this.dataa)
+
     })
   })
   }
@@ -56,7 +55,7 @@ export class HomeComponent implements OnInit {
   //     this.route.navigate([''])
   //       console.log("sonuuu",data)
   //   })
-  // } 
+  // }
 
   deleteUser() {
     Swal.fire({

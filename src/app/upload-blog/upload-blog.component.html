@@ -1,15 +1,18 @@
+
+<section class="vh-100 bg-image"
+style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
 <div class="container mt-4">
   <div class="row d-flex justify-content-center align-items-center">
     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
       <div class="card" style="border-radius: 15px;">
         <div class="card-body p-4">
-          <form [formGroup]="myForm" (ngSubmit)="submit()">
+          <form [formGroup]="myForm" >
             <div class="form-group">
-              <label for="name">Title</label>
+              <label for="name"> Blog Tittle</label>
               <input formControlName="blog_tittle" id="name" type="text" class="form-control">
             </div>
             <div class="form-group">
-              <label for="name">Category</label>
+              <label for="name"> Blog Category</label>
               <select class="form-control" formControlName="blog_category">
                 <option>Learning</option>
                 <option>Coding</option>
@@ -17,22 +20,24 @@
                 <option>Social Media</option>
               </select>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="file">Image</label>
               <input formControlName="file" id="file" type="file" class="form-control" (change)="onFileChange($event)">
-            </div>
-            <div style="height: 200px; width: 100%; border: 1px solid black;">
+            </div> -->
+            <!-- <div style="height: 200px; width: 100%; border: 1px solid black;">
               <img [src]="imageSrc" *ngIf="imageSrc" style="height: 200px; width: 100%">
-            </div>
+            </div> -->
             <div class="form-group">
-              <label for="name">Content</label>
+              <label for="name"> Blog Content</label>
               <textarea id="content" name="content" rows="5" cols="50" class="form-control"
                 formControlName="blog_content"></textarea>
             </div>
           </form>
-          <button class="btn btn-primary" (click)="submit()" >Submit</button>
+            <button class="btn btn-secondary" (click)="submit()"  id="uploadBlogbtn">Upload Blog</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+</section>
+

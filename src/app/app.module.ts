@@ -14,6 +14,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { UploadBlogComponent } from './upload-blog/upload-blog.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { NgxUiLoaderHttpModule } from 'ngx-ui-loader';
     ReactiveFormsModule,
     HttpClientModule,
     NgxUiLoaderModule,
+    Ng2SearchPipeModule,
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],

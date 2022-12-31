@@ -50,9 +50,7 @@ export class UsermgmService {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Authorization', token);
-    return this.http.post(environment.baseurl + 'route/middleware/controller/user/auth/User_Blog_Upload',data,{ 'headers': headers }).subscribe((data)=>{
-      console.log('datata',data);
-    })
+    return this.http.post(environment.baseurl + 'route/middleware/controller/user/auth/User_Blog_Upload',data,{ 'headers': headers })
   }
 
   public async viewAllBlog() {
@@ -99,7 +97,7 @@ export class UsermgmService {
       .set('Authorization', token);
     return this.http.put(environment.baseurl + 'route/middleware/controller/user/auth/User_Update_blog/blog_id=/' + _id, editedData, { 'headers': headers }).subscribe((dtaa)=>{
       console.log('in tsss',dtaa);
-      
+
     })
   }
 }
