@@ -14,12 +14,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // this.viewSingleBlog()
-    this.viewAllBlogs()
+    this.viewAllBlogs();
+    this.qoutes_report();
   }
   clear: any;
   dataa:any;
   delete:any;
-  searchBlog:any
+  searchBlog:any;
+  qoutes_data:any
   async logout() {
     // localStorage.clear();
     const data = await (await this.user.userlogOut()).subscribe((data) => {
@@ -83,6 +85,25 @@ export class HomeComponent implements OnInit {
         )
       }
     });
+  }
+
+  //qoutes_report for users
+// const i:any=0;
+Daily_qoutes:any
+  async qoutes_report(){
+ await    this.user.qoutes_report().then((result)=>{
+      result.subscribe((res:any)=>{
+         this.qoutes_data=res;
+         if(this.qoutes_data.status=='success'){
+           var i=0;
+           i++
+           this.Daily_qoutes=this.qoutes_data.data[i].text
+           console.log('qoutes_data',this.qoutes_data.data[i].text);
+         }
+
+      })
+    })
+    console.log('qoutes_data---llll',this.qoutes_data);
   }
 }
 

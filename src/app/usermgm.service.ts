@@ -70,7 +70,7 @@ export class UsermgmService {
     const headers =new HttpHeaders()
     .set('content-type', 'application/json')
     .set('Authorization',token);
-  return this.http.get(environment.baseurl + 'route/middleware/controller/user/auth/User_Delete',{ 'headers': headers })
+  return this.http.delete(environment.baseurl + 'route/middleware/controller/user/auth/User_Delete',{ 'headers': headers })
   }
 
   public async deleteSingleBlog(_id:any){
@@ -79,7 +79,7 @@ export class UsermgmService {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Authorization', token);
-    return this.http.get(environment.baseurl + 'route/middleware/controller/user/auth/User_Delete_blog/blog_id=/' +_id ,{ 'headers': headers })
+    return this.http.delete(environment.baseurl + 'route/middleware/controller/user/auth/User_Delete_blog/blog_id=/' +_id ,{ 'headers': headers })
   }
   public async userView(_id:any){
     const token:any= localStorage.getItem('token');
@@ -99,6 +99,10 @@ export class UsermgmService {
       console.log('in tsss',dtaa);
 
     })
+  }
+
+  public async qoutes_report(){
+    return this.http.get('http://localhost:6600//route/controller/user/qoutes_for_users')
   }
 }
 
