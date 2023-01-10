@@ -115,14 +115,17 @@ export class ProfileComponent implements OnInit {
   }
 
   async blogDelete(_id:any){
-  await (await this.service.deleteSingleBlog(_id)).subscribe(()=>{
+  await (await this.service.deleteSingleBlog(_id)).subscribe((data)=>
+  {
+   console.log('data',data);
+
   })
   }
 
     get f(){
   return this.myForm.controls;
   }
-   
+
   onFileChange(event:any) {
     const reader = new FileReader();
     if(event.target.files && event.target.files.length) {
@@ -136,7 +139,7 @@ export class ProfileComponent implements OnInit {
       };
     }
   }
-   
+
   async submit(){
     let bodydata = this.myForm.value
     let res = await this.service.uploadBlog(bodydata);

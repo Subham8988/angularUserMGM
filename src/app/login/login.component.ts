@@ -46,6 +46,15 @@ export class LoginComponent implements OnInit {
         this.service.userlogin(userLogInData).then((result) => {
       (result.subscribe((data) => {
         this.userdata = data;
+
+
+        if(this.userdata.status=='failed'){
+          alert('hii')
+          Swal.fire({
+            icon: 'error',
+            title: this.userdata.msg
+          })
+        }
         if (this.userdata.status == 200) {
           localStorage.setItem('token', this.userdata.token)
           this.route.navigate(['home'])
@@ -56,6 +65,7 @@ export class LoginComponent implements OnInit {
             title: this.userdata.msg
           })
         }
+
 
       }));
     }).catch((err: any) => {
